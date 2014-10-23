@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "consoleRPSLS", "consoleRPSL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gameLib", "gameLib\gameLib.csproj", "{30EAD969-5DA8-4BD4-B56E-A7800D56AC38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_RPSLS", "WPF_RPSLS\WPF_RPSLS.csproj", "{B6747C8C-9390-486D-BA6C-FEE7BF63DA66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{30EAD969-5DA8-4BD4-B56E-A7800D56AC38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30EAD969-5DA8-4BD4-B56E-A7800D56AC38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30EAD969-5DA8-4BD4-B56E-A7800D56AC38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6747C8C-9390-486D-BA6C-FEE7BF63DA66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6747C8C-9390-486D-BA6C-FEE7BF63DA66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6747C8C-9390-486D-BA6C-FEE7BF63DA66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6747C8C-9390-486D-BA6C-FEE7BF63DA66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
