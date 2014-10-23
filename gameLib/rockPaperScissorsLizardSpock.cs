@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace gameLib
 {
-    public class Class1
+    public class rockPaperScissorsLizardSpock
     {
     }
 }
