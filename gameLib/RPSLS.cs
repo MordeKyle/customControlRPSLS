@@ -11,6 +11,15 @@ namespace GameLibrary
 
         public enum Choice {Rock = 0, Paper = 1, Scissors = 2, Lizard = 3, Spock = 4}
         public enum Outcome {Win = 10, Lose = 11, Draw = 12}
+        private int computerChoice;
+
+        /// <summary>
+        /// gets computer's choice and exports it
+        /// </summary>
+        public int ComputerChoice
+        {
+            get { return computerChoice; }
+        }
 
         // create a constructor
         // TODO: revised the constructor
@@ -18,23 +27,23 @@ namespace GameLibrary
         {
 
         }
-        // define player's choice field and property
-        private int playerChoice; 
-        public int PlayerChoice
-        {
-            get { return playerChoice; }
-            set { playerChoice = value; }
-        }
 
-        // get computer's choice (initiate a random number).
-        private static readonly Random num = new Random();
-        private int computerChoice = num.Next(3);
-        public int ComputerChoice
+        /// <summary>
+        /// Generates the computer's choice
+        /// </summary>
+        /// <returns>Computer's choice as a game value</returns>
+        private static int generateComputerChoice()
         {
-            // computer choice is set to read-only
-            get { return computerChoice; }
+            Random num = new Random();
+            int computerChoice = num.Next(5);
+            return computerChoice;
         }
-
+        
+        /// <summary>
+        /// Takes game value and returns real world value of selections
+        /// </summary>
+        /// <param name="choice">Game value of user or computer's choice</param>
+        /// <returns>User or computer's choice as real world value</returns>
         public string DisplayChoice(int choice)
         {
             string show = "";
@@ -59,7 +68,11 @@ namespace GameLibrary
             return show;
         }
 
-        // display the game outcome
+        /// <summary>
+        /// Takes result of game as game value and resturns real world value
+        /// </summary>
+        /// <param name="outcome">game value result of game</param>
+        /// <returns>real world value of result of game</returns>
         public string DisplayOutcome(int outcome)
         {
             string result = "";
@@ -78,8 +91,13 @@ namespace GameLibrary
             return result;
         }
 
-         // Determine outcome using 2D Array
-        public int DetermineOutcome()
+        /// <summary>
+        /// Compares the user's and computer's inputs.
+        /// </summary>
+        /// <param name="userInput">User's input</param>
+        /// <param name="computerInput">Computer's input</param>
+        /// <returns>Returns the result of the game</returns>
+        public int DetermineOutcome(int userInput, int computerInput)
         {
             int result;
             int[,] selection = new int[5, 5] {  {(int)Outcome.Draw, (int)Outcome.Lose, (int)Outcome.Win,  (int)Outcome.Win, (int)Outcome.Lose},
@@ -87,7 +105,20 @@ namespace GameLibrary
                                                 {(int)Outcome.Lose, (int)Outcome.Win,  (int)Outcome.Draw, (int)Outcome.Win, (int)Outcome.Lose},
                                                 {(int)Outcome.Lose, (int)Outcome.Win,  (int)Outcome.Lose, (int)Outcome.Draw,(int)Outcome.Win },
                                                 {(int)Outcome.Win,  (int)Outcome.Lose, (int)Outcome.Win,  (int)Outcome.Lose,(int)Outcome.Draw}};
-            result = selection[PlayerChoice, ComputerChoice];
+            result = selection[userInput, computerInput];
+            return result;
+        }
+
+        /// <summary>
+        /// PLays the game
+        /// </summary>
+        /// <param name="userInput">game value of user's input</param>
+        /// <returns>result of game as game value</returns>
+        public int playGame(int userInput)
+        {
+            int result;
+            computerChoice = generateComputerChoice(); //generate computer choice and assign to int
+            result = DetermineOutcome(userInput, computerChoice);
             return result;
         }
     }
