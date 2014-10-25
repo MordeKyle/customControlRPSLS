@@ -17,7 +17,7 @@ namespace consoleRPSLS
             {
                 int playerChoice = -1; //declare int to hold user's input as game value
                 splash(); //display the user's options
-                RPSLS play = new RPSLS(); //delcare GameLibrary
+                RPSLS play = new RPSLS(); //delcare GameLibrary ----> Create a new RPSLS instance
                 playerChoice = inputHandeler();
 
                 if (playerChoice == 6) //user chose to exit the game
@@ -69,7 +69,7 @@ namespace consoleRPSLS
             Console.WriteLine();
             Console.Write("Enter Choice: ");
             string input = "";
-            input = (Console.ReadLine().ToUpper()); //take users input, apply to uppercase.
+            input = (Console.ReadLine().ToUpper()); //take users input, apply to uppercase method.
 
             int playerChoice = -1;
 
@@ -125,16 +125,18 @@ namespace consoleRPSLS
         {
             bool result;
             Console.Clear();
-            Console.WriteLine("Are you sure you want to " + type + "?"); 
+            Console.WriteLine("Are you sure you want to " + type + "?");
+            Console.Write("Please type Y or N and hit enter: ");   // Added this to give the user what keys to hit, to confirm exit.
             string userInput = (Console.ReadLine().ToUpper());
-
+            /*
             while ((userInput != "N") && (userInput != "Y"))
             {
                 Console.Clear();
                 Console.WriteLine();
                 Console.Write("Please type Y or N and hit enter: ");
                 userInput = (Console.ReadLine().ToUpper());
-            }
+            }*/
+
             if (userInput == "N")
             {
                 result = false;
