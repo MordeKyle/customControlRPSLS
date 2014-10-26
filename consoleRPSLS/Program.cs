@@ -136,7 +136,7 @@ namespace consoleRPSLS
                 Console.Write("Please type Y or N and hit enter: ");
                 userInput = (Console.ReadLine().ToUpper());
             }*/
-
+            //Why comment this ^ out? If this isnt used, user could enter anything but "n" or "N" and it would return true. -=KM=-
             if (userInput == "N")
             {
                 result = false;
