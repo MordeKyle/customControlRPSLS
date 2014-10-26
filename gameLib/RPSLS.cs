@@ -9,7 +9,7 @@ namespace GameLibrary
     public class RPSLS
     {
 
-        public enum Choice {Rock = 0, Paper = 1, Scissors = 2, Lizard = 3, Spock = 4}
+        public enum Choice {Rock = 0, Paper = 1, Scissors = 2, Lizard = 3, Spock = 4, Exit = 5}
         public enum Outcome {Win = 10, Lose = 11, Draw = 12}
         private int computerChoice;
 

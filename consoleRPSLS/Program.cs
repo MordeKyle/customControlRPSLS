@@ -13,6 +13,8 @@ namespace consoleRPSLS
 
         static void Main(string[] args)
         {
+            welcomeMessage(); //displays welcome message on initialize.
+
             while (true)
             {
                 int playerChoice = -1; //declare int to hold user's input as game value
@@ -20,10 +22,10 @@ namespace consoleRPSLS
                 RPSLS play = new RPSLS(); //delcare GameLibrary ----> Create a new RPSLS instance
                 playerChoice = inputHandeler();
 
-                if (playerChoice == 6) //user chose to exit the game
+                if (playerChoice == (int)RPSLS.Choice.Exit) //TODO: if (RPSLS.Choice.Exit.Equals(playerChoice)) doesnt work. Seems to skip it.
                 {
                     string exit = "exit";
-                    if (confirm(exit) == true)
+                    if (confirm(exit))
                     {
                         Environment.Exit(0);
                     }
@@ -32,7 +34,7 @@ namespace consoleRPSLS
                         Console.Clear();
                     }
                 }
-                else if (!(Enum.IsDefined(typeof(RPSLS.Choice), playerChoice)))
+                else if (!(Enum.IsDefined(typeof(RPSLS.Choice), playerChoice))) //checks for valid input
                 {
                     Console.WriteLine("Please enter a valid input!");
                 }
@@ -48,14 +50,20 @@ namespace consoleRPSLS
         }
 
         /// <summary>
+        /// Displays welcome message.
+        /// </summary>
+        static void welcomeMessage()
+        {
+            Console.WriteLine("**************************************************************************");
+            Console.WriteLine("*          Welcome to Rock, Paper, Scissors, Lizard, Spock Game!         *");
+            Console.WriteLine("**************************************************************************");
+        }
+
+        /// <summary>
         /// Displays the welcome message to the user, and offers the user their options.
         /// </summary>
         static void splash()
         {
-            // Show Welcome Message
-            Console.WriteLine("**************************************************************************");
-            Console.WriteLine("*          Welcome to Rock, Paper, Scissors, Lizard, Spock Game!         *");
-            Console.WriteLine("**************************************************************************");
             Console.WriteLine();
             Console.WriteLine("TO PLAY: Press R=Rock, P=Paper, S=Scissors, L=Lizard, K=Spock, E=Exit Game");
         }
@@ -91,7 +99,7 @@ namespace consoleRPSLS
                     playerChoice = (int)RPSLS.Choice.Spock;
                     break;
                 case "E":
-                    playerChoice = 6;
+                    playerChoice = (int)RPSLS.Choice.Exit;
                     break;
             }
             return playerChoice;
