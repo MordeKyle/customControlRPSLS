@@ -128,14 +128,14 @@ namespace consoleRPSLS
             Console.WriteLine("Are you sure you want to " + type + "?");
             Console.Write("Please type Y or N and hit enter: ");   // Added this to give the user what keys to hit, to confirm exit.
             string userInput = (Console.ReadLine().ToUpper());
-            /*
+            
             while ((userInput != "N") && (userInput != "Y"))
             {
                 Console.Clear();
                 Console.WriteLine();
-                Console.Write("Please type Y or N and hit enter: ");
+                Console.Write("Invalid Input. Please type Y or N, and hit enter: ");  // Prompt the user to enter valid input.
                 userInput = (Console.ReadLine().ToUpper());
-            }*/
+            }
 
             if (userInput == "N")
             {
