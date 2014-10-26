@@ -101,6 +101,12 @@ namespace consoleRPSLS
                 case "E":
                     playerChoice = (int)RPSLS.Choice.Exit;
                     break;
+                case "Y":
+                    playerChoice = (int)RPSLS.Confirm.Yes;
+                    break;
+                case "N":
+                    playerChoice = (int)RPSLS.Confirm.No;
+                    break;
             }
             return playerChoice;
         }
@@ -134,18 +140,18 @@ namespace consoleRPSLS
             bool result;
             Console.Clear();
             Console.WriteLine("Are you sure you want to " + type + "?");
-            Console.Write("Please type Y or N and hit enter: ");   // Added this to give the user what keys to hit, to confirm exit.
-            string userInput = (Console.ReadLine().ToUpper());
-            
-            while ((userInput != "N") && (userInput != "Y"))
+            Console.Write("Please type Y or N and hit enter.");   // Added this to give the user what keys to hit, to confirm exit.
+            int userInput = inputHandeler();
+
+            while (!(Enum.IsDefined(typeof(RPSLS.Confirm), userInput)))
             {
                 Console.Clear();
                 Console.WriteLine();
-                Console.Write("Invalid Input. Please type Y or N, and hit enter: ");  // Prompt the user to enter valid input.
-                userInput = (Console.ReadLine().ToUpper());
+                Console.Write("Invalid Input. Please type Y or N, and hit enter.");  // Prompt the user to enter valid input.
+                userInput = inputHandeler();
             }
 
-            if (userInput == "N")
+            if (userInput == (int)RPSLS.Confirm.No)
             {
                 result = false;
             }

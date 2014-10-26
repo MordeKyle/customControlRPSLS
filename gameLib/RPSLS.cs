@@ -9,9 +9,11 @@ namespace GameLibrary
     public class RPSLS
     {
 
-        public enum Choice {Rock = 0, Paper = 1, Scissors = 2, Lizard = 3, Spock = 4, Exit = 5}
-        public enum Outcome {Win = 10, Lose = 11, Draw = 12}
-        private int computerChoice;
+        public enum Choice {Rock = 0, Paper = 1, Scissors = 2, Lizard = 3, Spock = 4, Exit = 5} //enums for user inputs.
+        public enum Outcome {Win = 10, Lose = 11, Draw = 12} //enums for game outcomes.
+        public enum Confirm {Yes = 20, No = 21} //enums for confirmation messages.
+
+        private int computerChoice; //declare class level holder for computerChoice to outputted.
 
         /// <summary>
         /// gets computer's choice and exports it
