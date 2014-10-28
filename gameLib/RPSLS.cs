@@ -123,5 +123,8 @@ namespace GameLibrary
             result = DetermineOutcome(userInput, computerChoice);
             return result;
         }
+
+        //TODO: Create function to handle result file. If we handle results in the class and return the values,
+        //      theoretically the game could share the same result file and show persistance across platforms.
     }
 }
