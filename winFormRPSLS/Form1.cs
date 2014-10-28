@@ -13,57 +13,70 @@ namespace winFormRPSLS
 {
     public partial class Form1 : Form
     {
+        int userChoice = -1;
+
         public Form1()
         {
             InitializeComponent();
-            //TODO: With results available, add initial display of past results here.
+            userChoiceLbl.Text = String.Empty;
+            computerChoiceLbl.Text = String.Empty;
+            resultLbl.Text = String.Empty;
+            label2.Text = String.Empty;
+            //TODO: With results file available, add initial display of past results here.
         }
-
-        private int userChoice = -1;
 
         private void rockBtn_Click(object sender, EventArgs e)
         {
             userChoice = (int)RPSLS.Choice.Rock;
+            playGame(userChoice);
         }
 
         private void paperBtn_Click(object sender, EventArgs e)
         {
             userChoice = (int)RPSLS.Choice.Paper;
+            playGame(userChoice);
         }
 
         private void scissorsBtn_Click(object sender, EventArgs e)
         {
             userChoice = (int)RPSLS.Choice.Scissors;
+            playGame(userChoice);
         }
 
         private void lizardBtn_Click(object sender, EventArgs e)
         {
             userChoice = (int)RPSLS.Choice.Lizard;
+            playGame(userChoice);
         }
 
         private void spockBtn_Click(object sender, EventArgs e)
         {
             userChoice = (int)RPSLS.Choice.Spock;
+            playGame(userChoice);
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
-
+            //TODO: add confirm prompt
         }
 
-        private static void playGame(int userInput)
+        private void playGame(int userInput)
         {
             RPSLS play = new RPSLS();
             int result; //delcare result holder
             int computerChoice; //declare computer choice holder
+            string resultOut; //declare string result holder for display
+            string computerChoiceOut; //declare string computerChoice holder for display
             result = play.playGame(userInput); //play the game, return win lose or draw
             computerChoice = play.ComputerChoice; //return the computer's choice
-            displayResults(userInput, computerChoice, result); //pass user choice, computer choice, and result of game to be displayed
-
+            resultOut = play.DisplayOutcome(result); //return real world value
+            computerChoiceOut = play.DisplayChoice(computerChoice); //return real world value
+            displayResults(computerChoiceOut, resultOut); //pass user choice, computer choice, and result of game to be displayed
         }
-        private static void displayResults(int userInput, int computerChoice, int result)
+        private void displayResults(string computerChoice, string result)
         {
-
+            computerChoiceLbl.Text = computerChoice;
+            resultLbl.Text = result;
         }
     }
 }
