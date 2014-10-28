@@ -33,9 +33,15 @@
             this.scissorsBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lizardBtn = new System.Windows.Forms.Button();
             this.spockBtn = new System.Windows.Forms.Button();
+            this.lizardBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.userChoiceLbl = new System.Windows.Forms.Label();
+            this.computerChoiceLbl = new System.Windows.Forms.Label();
+            this.resultLbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,16 +98,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Click one to play:";
             // 
-            // lizardBtn
-            // 
-            this.lizardBtn.Location = new System.Drawing.Point(21, 106);
-            this.lizardBtn.Name = "lizardBtn";
-            this.lizardBtn.Size = new System.Drawing.Size(75, 23);
-            this.lizardBtn.TabIndex = 3;
-            this.lizardBtn.Text = "Lizard";
-            this.lizardBtn.UseVisualStyleBackColor = true;
-            this.lizardBtn.Click += new System.EventHandler(this.lizardBtn_Click);
-            // 
             // spockBtn
             // 
             this.spockBtn.Location = new System.Drawing.Point(21, 135);
@@ -112,9 +108,19 @@
             this.spockBtn.UseVisualStyleBackColor = true;
             this.spockBtn.Click += new System.EventHandler(this.spockBtn_Click);
             // 
+            // lizardBtn
+            // 
+            this.lizardBtn.Location = new System.Drawing.Point(21, 106);
+            this.lizardBtn.Name = "lizardBtn";
+            this.lizardBtn.Size = new System.Drawing.Size(75, 23);
+            this.lizardBtn.TabIndex = 3;
+            this.lizardBtn.Text = "Lizard";
+            this.lizardBtn.UseVisualStyleBackColor = true;
+            this.lizardBtn.Click += new System.EventHandler(this.lizardBtn_Click);
+            // 
             // exitBtn
             // 
-            this.exitBtn.Location = new System.Drawing.Point(197, 227);
+            this.exitBtn.Location = new System.Drawing.Point(257, 264);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(75, 23);
             this.exitBtn.TabIndex = 5;
@@ -122,11 +128,71 @@
             this.exitBtn.UseVisualStyleBackColor = true;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 210);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "You Chose:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 228);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Computer Chose:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 246);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Result:";
+            // 
+            // userChoiceLbl
+            // 
+            this.userChoiceLbl.AutoSize = true;
+            this.userChoiceLbl.Location = new System.Drawing.Point(109, 210);
+            this.userChoiceLbl.Name = "userChoiceLbl";
+            this.userChoiceLbl.Size = new System.Drawing.Size(74, 13);
+            this.userChoiceLbl.TabIndex = 9;
+            this.userChoiceLbl.Text = "userChoiceLbl";
+            // 
+            // computerChoiceLbl
+            // 
+            this.computerChoiceLbl.AutoSize = true;
+            this.computerChoiceLbl.Location = new System.Drawing.Point(109, 228);
+            this.computerChoiceLbl.Name = "computerChoiceLbl";
+            this.computerChoiceLbl.Size = new System.Drawing.Size(98, 13);
+            this.computerChoiceLbl.TabIndex = 10;
+            this.computerChoiceLbl.Text = "computerChoiceLbl";
+            // 
+            // resultLbl
+            // 
+            this.resultLbl.AutoSize = true;
+            this.resultLbl.Location = new System.Drawing.Point(109, 246);
+            this.resultLbl.Name = "resultLbl";
+            this.resultLbl.Size = new System.Drawing.Size(46, 13);
+            this.resultLbl.TabIndex = 11;
+            this.resultLbl.Text = "resultLbl";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(344, 299);
+            this.Controls.Add(this.resultLbl);
+            this.Controls.Add(this.computerChoiceLbl);
+            this.Controls.Add(this.userChoiceLbl);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -148,6 +214,12 @@
         private System.Windows.Forms.Button spockBtn;
         private System.Windows.Forms.Button lizardBtn;
         private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label userChoiceLbl;
+        private System.Windows.Forms.Label computerChoiceLbl;
+        private System.Windows.Forms.Label resultLbl;
     }
 }
 
