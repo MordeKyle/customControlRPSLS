@@ -160,5 +160,11 @@ namespace GameLibrary
 
             return resultTotal; //output the counter, as it is equal to how many wins, loses, or draws
         }
+
+        public void clearHistory()
+        {
+            const string resultFile = "../../Results.txt";
+            File.WriteAllText(resultFile, string.Empty);
+        }
     }
 }
