@@ -99,5 +99,25 @@ namespace winFormRPSLS
             computerChoiceLbl.Text = computerChoice;
             resultLbl.Text = result;
         }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            //shows message box with yes and no buttons to confirm exit.
+            var confirm = MessageBox.Show("Are you sure you want to erase your result history?", "Erase History Confirmation", MessageBoxButtons.YesNo);
+
+            if (confirm == DialogResult.Yes)
+            {
+                RPSLS clear = new RPSLS();
+                clear.clearHistory();
+                winsLbl.Text = "0"; //update labels
+                losesLbl.Text = "0";
+                drawsLbl.Text = "0";
+
+            }
+            else
+            {
+
+            }
+        }
     }
 }
