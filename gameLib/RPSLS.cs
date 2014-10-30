@@ -133,5 +133,32 @@ namespace GameLibrary
             outputFile.WriteLine(result);
             outputFile.Close();
         }
+        public int readResults(string result)
+        {
+            //declaring output
+            int resultTotal = 0;
+            //declaring location of resultFile
+            const string resultFile = "../../Results.txt";
+
+            //declaring streamreader
+            StreamReader inputFile;
+            //streamreading the results file
+            inputFile = File.OpenText(resultFile);
+
+            string readLine;
+
+            while (inputFile.EndOfStream == false) //loop to count how many times win, lose, or draw is in the file
+            {
+                readLine = inputFile.ReadLine();
+
+                if (readLine == result) //checks to se if each line is equal to win, lose, or draw
+                {
+                    ++resultTotal; //if so, add 1 to the counter
+                }
+            }
+            inputFile.Close();
+
+            return resultTotal; //output the counter, as it is equal to how many wins, loses, or draws
+        }
     }
 }

@@ -42,6 +42,12 @@
             this.userChoiceLbl = new System.Windows.Forms.Label();
             this.computerChoiceLbl = new System.Windows.Forms.Label();
             this.resultLbl = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.winsLbl = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.losesLbl = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.drawsLbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -182,11 +188,71 @@
             this.resultLbl.TabIndex = 11;
             this.resultLbl.Text = "resultLbl";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(163, 58);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Wins:";
+            // 
+            // winsLbl
+            // 
+            this.winsLbl.AutoSize = true;
+            this.winsLbl.Location = new System.Drawing.Point(203, 58);
+            this.winsLbl.Name = "winsLbl";
+            this.winsLbl.Size = new System.Drawing.Size(42, 13);
+            this.winsLbl.TabIndex = 13;
+            this.winsLbl.Text = "winsLbl";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(159, 87);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Loses:";
+            // 
+            // losesLbl
+            // 
+            this.losesLbl.AutoSize = true;
+            this.losesLbl.Location = new System.Drawing.Point(203, 87);
+            this.losesLbl.Name = "losesLbl";
+            this.losesLbl.Size = new System.Drawing.Size(45, 13);
+            this.losesLbl.TabIndex = 15;
+            this.losesLbl.Text = "losesLbl";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(157, 116);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Draws:";
+            // 
+            // drawsLbl
+            // 
+            this.drawsLbl.AutoSize = true;
+            this.drawsLbl.Location = new System.Drawing.Point(203, 116);
+            this.drawsLbl.Name = "drawsLbl";
+            this.drawsLbl.Size = new System.Drawing.Size(49, 13);
+            this.drawsLbl.TabIndex = 17;
+            this.drawsLbl.Text = "drawsLbl";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 299);
+            this.Controls.Add(this.drawsLbl);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.losesLbl);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.winsLbl);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.resultLbl);
             this.Controls.Add(this.computerChoiceLbl);
             this.Controls.Add(this.userChoiceLbl);
@@ -220,6 +286,12 @@
         private System.Windows.Forms.Label userChoiceLbl;
         private System.Windows.Forms.Label computerChoiceLbl;
         private System.Windows.Forms.Label resultLbl;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label winsLbl;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label losesLbl;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label drawsLbl;
     }
 }
 

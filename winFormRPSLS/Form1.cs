@@ -14,14 +14,21 @@ namespace winFormRPSLS
     public partial class Form1 : Form
     {
         int userChoice = -1;
+        static string win = "You Win!";
+        static string lose = "You Lose!";
+        static string draw = "It's a Draw!";
 
         public Form1()
         {
             InitializeComponent();
-            userChoiceLbl.Text = String.Empty;
-            computerChoiceLbl.Text = String.Empty;
-            resultLbl.Text = String.Empty;
-            label2.Text = String.Empty;
+            userChoiceLbl.Text = String.Empty; //empties label
+            computerChoiceLbl.Text = String.Empty; //empties label
+            resultLbl.Text = String.Empty; //empties label
+            label2.Text = String.Empty; //empties label
+            RPSLS results = new RPSLS();
+            winsLbl.Text = results.readResults(win).ToString(); //prints past wins
+            losesLbl.Text = results.readResults(lose).ToString(); //prints past loses
+            drawsLbl.Text = results.readResults(draw).ToString(); //prints past draws
             //TODO: With results file available, add initial display of past results here.
         }
 
@@ -82,7 +89,10 @@ namespace winFormRPSLS
             resultOut = play.DisplayOutcome(result); //return real world value
             computerChoiceOut = play.DisplayChoice(computerChoice); //return real world value
             displayResults(computerChoiceOut, resultOut); //pass user choice, computer choice, and result of game to be displayed
-            play.recordResults(resultOut);
+            play.recordResults(resultOut); //record result of game to result file
+            winsLbl.Text = play.readResults(win).ToString(); //print wins
+            losesLbl.Text = play.readResults(lose).ToString(); //print loses
+            drawsLbl.Text = play.readResults(draw).ToString(); //print draws
         }
         private void displayResults(string computerChoice, string result)
         {
