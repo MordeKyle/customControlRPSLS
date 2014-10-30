@@ -57,7 +57,17 @@ namespace winFormRPSLS
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
-            //TODO: add confirm prompt
+            //shows message box with yes and no buttons to confirm exit.
+            var confirm = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo);
+
+            if (confirm == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+
+            }
         }
 
         private void playGame(int userInput)
