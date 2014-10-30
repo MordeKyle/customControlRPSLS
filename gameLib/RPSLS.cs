@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace GameLibrary
 {
@@ -124,7 +125,13 @@ namespace GameLibrary
             return result;
         }
 
-        //TODO: Create function to handle result file. If we handle results in the class and return the values,
-        //      theoretically the game could share the same result file and show persistance across platforms.
+        public void recordResults(string result)
+        {
+            const string resultFile = "../../Results.txt";
+            StreamWriter outputFile;
+            outputFile = File.AppendText(resultFile);
+            outputFile.WriteLine(result);
+            outputFile.Close();
+        }
     }
 }

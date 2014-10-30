@@ -82,6 +82,7 @@ namespace winFormRPSLS
             resultOut = play.DisplayOutcome(result); //return real world value
             computerChoiceOut = play.DisplayChoice(computerChoice); //return real world value
             displayResults(computerChoiceOut, resultOut); //pass user choice, computer choice, and result of game to be displayed
+            play.recordResults(resultOut);
         }
         private void displayResults(string computerChoice, string result)
         {
