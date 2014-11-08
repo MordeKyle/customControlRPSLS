@@ -11,20 +11,22 @@ using GameLibrary;
 
 namespace winFormRPSLS
 {
-    public partial class Form1 : Form
+    public partial class RPSLS_Form : Form
     {
         int userChoice = -1;
+
+        //TODO: Reference the display outcome in the library to get the outcome status below
         static string win = "You Win!";
         static string lose = "You Lose!";
         static string draw = "It's a Draw!";
 
-        public Form1()
+        public RPSLS_Form()
         {
             InitializeComponent();
             userChoiceLbl.Text = String.Empty; //empties label
             computerChoiceLbl.Text = String.Empty; //empties label
             resultLbl.Text = String.Empty; //empties label
-            label2.Text = String.Empty; //empties label
+            //label2.Text = String.Empty; //empties label
             RPSLS results = new RPSLS();
             winsLbl.Text = results.readResults(win).ToString(); //prints past wins
             losesLbl.Text = results.readResults(lose).ToString(); //prints past loses
@@ -82,6 +84,7 @@ namespace winFormRPSLS
             RPSLS play = new RPSLS();
             int result; //delcare result holder
             int computerChoice; //declare computer choice holder
+            //MessageBox.Show(userInput.ToString());
             string resultOut; //declare string result holder for display
             string computerChoiceOut; //declare string computerChoice holder for display
             result = play.playGame(userInput); //play the game, return win lose or draw
@@ -90,13 +93,19 @@ namespace winFormRPSLS
             computerChoiceOut = play.DisplayChoice(computerChoice); //return real world value
             displayResults(computerChoiceOut, resultOut); //pass user choice, computer choice, and result of game to be displayed
             play.recordResults(resultOut); //record result of game to result file
-            winsLbl.Text = play.readResults(win).ToString(); //print wins
+
+            winsLbl.Text  = play.readResults(win).ToString(); //print wins
             losesLbl.Text = play.readResults(lose).ToString(); //print loses
             drawsLbl.Text = play.readResults(draw).ToString(); //print draws
+
+            // Display user input
+            // TODO: Create a method to display user, computer choice, and results
+            userChoiceLbl.Text = play.DisplayChoice(userInput);
         }
         private void displayResults(string computerChoice, string result)
         {
             computerChoiceLbl.Text = computerChoice;
+            userChoiceLbl.Text = userChoice.ToString();
             resultLbl.Text = result;
         }
 
@@ -112,12 +121,14 @@ namespace winFormRPSLS
                 winsLbl.Text = "0"; //update labels
                 losesLbl.Text = "0";
                 drawsLbl.Text = "0";
-
             }
             else
             {
 
             }
         }
+
+
+
     }
 }
