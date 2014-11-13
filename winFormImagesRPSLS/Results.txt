@@ -11,3 +11,6 @@ You Win!
 You Lose!
 You Win!
 You Win!
+You Lose!
+You Lose!
+It's a Draw!
