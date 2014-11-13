@@ -11,16 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_RPSLS", "WPF_RPSLS\WPF_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winFormRPSLS", "winFormRPSLS\winFormRPSLS.csproj", "{0579F436-00B8-4AB3-960E-34F637A01309}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{7225D400-5438-44A4-8E81-0F634F9CE52C}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{8D3D0729-3168-4379-A864-1CBD3FE598B5}"
-	ProjectSection(SolutionItems) = preProject
-		Resources\Images\lizard.gif = Resources\Images\lizard.gif
-		Resources\Images\paper.gif = Resources\Images\paper.gif
-		Resources\Images\rock.gif = Resources\Images\rock.gif
-		Resources\Images\scissors.gif = Resources\Images\scissors.gif
-		Resources\Images\spock.gif = Resources\Images\spock.gif
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winFormImagesRPSLS", "winFormImagesRPSLS\winFormImagesRPSLS.csproj", "{C32553C1-8BC2-4695-927E-D8DAD960067D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,11 +35,12 @@ Global
 		{0579F436-00B8-4AB3-960E-34F637A01309}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0579F436-00B8-4AB3-960E-34F637A01309}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0579F436-00B8-4AB3-960E-34F637A01309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C32553C1-8BC2-4695-927E-D8DAD960067D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C32553C1-8BC2-4695-927E-D8DAD960067D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C32553C1-8BC2-4695-927E-D8DAD960067D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C32553C1-8BC2-4695-927E-D8DAD960067D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{8D3D0729-3168-4379-A864-1CBD3FE598B5} = {7225D400-5438-44A4-8E81-0F634F9CE52C}
 	EndGlobalSection
 EndGlobal
