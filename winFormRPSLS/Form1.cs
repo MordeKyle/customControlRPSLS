@@ -71,7 +71,7 @@ namespace winFormRPSLS
 
             if (confirm == DialogResult.Yes)
             {
-                Environment.Exit(0);
+                Environment.Exit(0);     // Showed an exception when "yes" was clicked
             }
             else
             {
