@@ -7,41 +7,32 @@ using System.IO;
 
 namespace GameLibrary
 {
-    public class RPSLS
+    public class RPSLS : IChoice
     {
 
         public enum Choice {Rock = 0, Paper = 1, Scissors = 2, Lizard = 3, Spock = 4, Exit = 5} //enums for user inputs.
         public enum Outcome {Win = 10, Lose = 11, Draw = 12} //enums for game outcomes.
         public enum Confirm {Yes = 20, No = 21} //enums for confirmation messages.
 
-        private int computerChoice; //declare class level holder for computerChoice to outputted.
-
-        /// <summary>
-        /// gets computer's choice and exports it
-        /// </summary>
-        public int ComputerChoice
-        {
-            get { return computerChoice; }
-        }
-
         // create a constructor
         // TODO: revised the constructor
-        public RPSLS()
-        {
+        public RPSLS() { }
 
-        }
 
         /// <summary>
-        /// Generates the computer's choice
+        /// Implement the computer choice interface.
         /// </summary>
-        /// <returns>Computer's choice as a game value</returns>
-        private static int generateComputerChoice()
+        private int computerChoice;     // Backing field for computer choice
+        public int ComputerChoice       // Set the property for computer choice
         {
-            Random num = new Random();
-            int computerChoice = num.Next(5);
-            return computerChoice;
+            get 
+            {
+                Random num = new Random();
+                computerChoice = num.Next(5);
+                return computerChoice; 
+            }
         }
-        
+
         /// <summary>
         /// Takes game value and returns real world value of selections
         /// </summary>
@@ -60,7 +51,7 @@ namespace GameLibrary
                     break;
                 case (int)Choice.Scissors:
                     show = "SCISSORS";
-                    break;
+                     break;
                 case (int)Choice.Lizard:
                     show = "LIZARD";
                     break;
@@ -120,8 +111,8 @@ namespace GameLibrary
         public int playGame(int userInput)
         {
             int result;
-            computerChoice = generateComputerChoice(); //generate computer choice and assign to int
-            result = DetermineOutcome(userInput, computerChoice);
+            //computerChoice = generateComputerChoice(); //generate computer choice and assign to int
+            result = DetermineOutcome(userInput, ComputerChoice);
             return result;
         }
 
@@ -166,5 +157,7 @@ namespace GameLibrary
             const string resultFile = "../../Results.txt";
             File.WriteAllText(resultFile, string.Empty);
         }
+
+       
     }
 }
