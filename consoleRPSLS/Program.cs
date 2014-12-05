@@ -17,12 +17,14 @@ namespace consoleRPSLS
 
             while (true)
             {
-                int playerChoice = -1; //declare int to hold user's input as game value
+                //int playerChoice = -1; //declare int to hold user's input as game value
                 splash(); //display the user's options
                 RPSLS play = new RPSLS(); //delcare GameLibrary ----> Create a new RPSLS instance
-                playerChoice = inputHandeler();
+                //playerChoice = inputHandeler();
+                play.PlayerChoice = inputHandeler();    // Get and set playerChoice
 
-                if (playerChoice == (int)RPSLS.Choice.Exit) //TODO: if (RPSLS.Choice.Exit.Equals(playerChoice)) doesnt work. Seems to skip it.
+                //if (playerChoice == (int)RPSLS.Choice.Exit) //TODO: if (RPSLS.Choice.Exit.Equals(playerChoice)) doesnt work. Seems to skip it.
+                if (play.PlayerChoice == (int)RPSLS.Choice.Exit)
                 {
                     string exit = "exit";
                     if (confirm(exit))
@@ -34,7 +36,9 @@ namespace consoleRPSLS
                         Console.Clear();
                     }
                 }
-                else if (!(Enum.IsDefined(typeof(RPSLS.Choice), playerChoice))) //checks for valid input
+
+                //else if (!(Enum.IsDefined(typeof(RPSLS.Choice), playerChoice))) //checks for valid input
+                else if (!(Enum.IsDefined(typeof(RPSLS.Choice), play.PlayerChoice))) // Check if input is valid
                 {
                     Console.WriteLine("Please enter a valid input!");
                 }
@@ -42,9 +46,11 @@ namespace consoleRPSLS
                 {
                     int result; //delcare result holder
                     int computerChoice; //declare computer choice holder
-                    result = play.playGame(playerChoice); //play the game, return win lose or draw
+                    //result = play.playGame(playerChoice); //play the game, return win lose or draw
+                    result = play.playGame(play.PlayerChoice);
                     computerChoice = play.ComputerChoice; //return the computer's choice
-                    displayResults(playerChoice, computerChoice, result); //pass user choice, computer choice, and result of game to be displayed
+                    //displayResults(playerChoice, computerChoice, result); //pass user choice, computer choice, and result of game to be displayed
+                    displayResults(play.PlayerChoice, computerChoice, result); //pass user choice, computer choice, and result of game to be displayed
                 }
             }
         }

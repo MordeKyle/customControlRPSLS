@@ -20,6 +20,23 @@ namespace GameLibrary
 
 
         /// <summary>
+        /// Implement the playerChoice interface.
+        /// </summary>
+        private int playerChoice;       // Backing field for player choice
+        public int PlayerChoice         // Set the property for player choice
+        {
+            get
+            {
+                return playerChoice;
+            }
+            set
+            {
+                playerChoice = value;
+            }
+        }
+
+
+        /// <summary>
         /// Implement the computer choice interface.
         /// </summary>
         private int computerChoice;     // Backing field for computer choice
@@ -158,6 +175,7 @@ namespace GameLibrary
             File.WriteAllText(resultFile, string.Empty);
         }
 
-       
+
+
     }
 }
