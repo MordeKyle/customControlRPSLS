@@ -9,8 +9,10 @@ namespace GameLibrary
 {
     public class RPSLS : IChoice
     {
-
+        // Should be separated?
+        // Use new keyword to hide inherited member: enum Choice
         public enum Choice {Rock = 0, Paper = 1, Scissors = 2, Lizard = 3, Spock = 4, Exit = 5} //enums for user inputs.
+        //public new enum Choice { Rock = 0, Paper = 1, Scissors = 2, Lizard = 3, Spock = 4, Exit = 5 } //enums for user inputs.
         public enum Outcome {Win = 10, Lose = 11, Draw = 12} //enums for game outcomes.
         public enum Confirm {Yes = 20, No = 21} //enums for confirmation messages.
 

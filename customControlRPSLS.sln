@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winFormRPSLS", "winFormRPSL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winFormImagesRPSLS", "winFormImagesRPSLS\winFormImagesRPSLS.csproj", "{C32553C1-8BC2-4695-927E-D8DAD960067D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "consoleRPS", "consoleRPS\consoleRPS.csproj", "{B6D3E949-6BA8-4133-8DAE-05CB438F5AE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C32553C1-8BC2-4695-927E-D8DAD960067D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C32553C1-8BC2-4695-927E-D8DAD960067D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C32553C1-8BC2-4695-927E-D8DAD960067D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6D3E949-6BA8-4133-8DAE-05CB438F5AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6D3E949-6BA8-4133-8DAE-05CB438F5AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6D3E949-6BA8-4133-8DAE-05CB438F5AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6D3E949-6BA8-4133-8DAE-05CB438F5AE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
