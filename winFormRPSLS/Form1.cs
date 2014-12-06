@@ -23,14 +23,16 @@ namespace winFormRPSLS
         public RPSLS_Form()
         {
             InitializeComponent();
-            userChoiceLbl.Text = String.Empty; //empties label
-            computerChoiceLbl.Text = String.Empty; //empties label
-            resultLbl.Text = String.Empty; //empties label
+            userChoiceLbl.Text = String.Empty;      //empties label
+            computerChoiceLbl.Text = String.Empty;  //empties label
+            resultLbl.Text = String.Empty;          //empties label
             //label2.Text = String.Empty; //empties label
+
+            ///Can this be moved to a constructor???
             RPSLS results = new RPSLS();
-            winsLbl.Text = results.readResults(win).ToString(); //prints past wins
-            losesLbl.Text = results.readResults(lose).ToString(); //prints past loses
-            drawsLbl.Text = results.readResults(draw).ToString(); //prints past draws
+            winsLbl.Text = results.readResults(win).ToString();     //prints past wins
+            losesLbl.Text = results.readResults(lose).ToString();   //prints past loses
+            drawsLbl.Text = results.readResults(draw).ToString();   //prints past draws
             //TODO: With results file available, add initial display of past results here.
         }
 
@@ -77,8 +79,7 @@ namespace winFormRPSLS
             else
             {
                 // Goes back to the application if "no" button is clicked
-                this.Refresh();
-               
+                this.Refresh();  
             }
         }
 
@@ -86,10 +87,8 @@ namespace winFormRPSLS
         private void playGame(int userInput)
         {
             RPSLS play = new RPSLS();
-            // Get user choice
+            // Get player's choice
             play.PlayerChoice = userInput;
-            //MessageBox.Show("Player: " + play.PlayerChoice);
-            //MessageBox.Show("Player: " + play.ComputerChoice);
 
             //int result; //delcare result holder
             int computerChoice; //declare computer choice holder
@@ -101,19 +100,20 @@ namespace winFormRPSLS
             //resultOut = play.DisplayOutcome(result); //return real world value
             computerChoiceOut = play.DisplayChoice(computerChoice); //return real world value
             //displayResults(computerChoiceOut, resultOut); //pass user choice, computer choice, and result of game to be displayed
-            //play.recordResults(resultOut); //record result of game to result file
 
-            winsLbl.Text  = play.readResults(win).ToString(); //print wins
-            losesLbl.Text = play.readResults(lose).ToString(); //print loses
-            drawsLbl.Text = play.readResults(draw).ToString(); //print draws
-
-            // Display user input
-
-            
             // Display player's choice, computer's choice, and the outcome to assigned labels.
             userChoiceLbl.Text = play.DisplayChoice(userInput);
             computerChoiceLbl.Text = play.DisplayChoice(play.ComputerChoice);
-            resultLbl.Text = play.DisplayOutcome(play.DetermineOutcome());
+            resultLbl.Text = play.DisplayOutcome(play.DetermineOutcome());  
+
+            //play.recordResults(resultOut); //record result of game to result file
+            // Record results to text file
+            // There's a bug in counting the results. TODO:
+            play.recordResults(play.DisplayOutcome(play.DetermineOutcome())); //record result of game to result file
+
+            winsLbl.Text  = play.readResults(win).ToString();   //print wins
+            losesLbl.Text = play.readResults(lose).ToString();  //print loses
+            drawsLbl.Text = play.readResults(draw).ToString();  //print draws
 
         }
         private void displayResults(string computerChoice, string result)
@@ -125,7 +125,7 @@ namespace winFormRPSLS
 
         private void clearBtn_Click(object sender, EventArgs e)
         {
-            //shows message box with yes and no buttons to confirm exit.
+            // Show message box with yes and no buttons to confirm exit.
             var confirm = MessageBox.Show("Are you sure you want to erase your result history?", "Erase History Confirmation", MessageBoxButtons.YesNo);
 
             if (confirm == DialogResult.Yes)
@@ -141,8 +141,5 @@ namespace winFormRPSLS
                 this.Refresh();
             }
         }
-
-
-
     }
 }

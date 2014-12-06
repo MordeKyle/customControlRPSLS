@@ -20,24 +20,6 @@ namespace GameLibrary
         // TODO: revised the constructor
         public RPSLS() { }
 
-        /*
-        /// <summary>
-        /// Implement the playerChoice interface.
-        /// </summary>
-        private int playerChoice;       // Backing field for player choice
-        public int PlayerChoice         // Set the property for player choice
-        {
-            get
-            {
-                return playerChoice;
-            }
-            set
-            {
-                playerChoice = value;
-            }
-        }
-        */
-
         /// <summary>
         /// Implement the computer choice interface. The override keyword is used to change the number of
         /// random numbers from 3 to 5 to play RPSLS.
@@ -159,18 +141,18 @@ namespace GameLibrary
 
             string readLine;
 
-            while (inputFile.EndOfStream == false) //loop to count how many times win, lose, or draw is in the file
+            while (inputFile.EndOfStream == false)  //loop to count how many times win, lose, or draw is in the file
             {
                 readLine = inputFile.ReadLine();
 
-                if (readLine == result) //checks to se if each line is equal to win, lose, or draw
+                if (readLine == result)     //checks to se if each line is equal to win, lose, or draw
                 {
-                    ++resultTotal; //if so, add 1 to the counter
+                    ++resultTotal;   //if so, add 1 to the counter
                 }
             }
             inputFile.Close();
 
-            return resultTotal; //output the counter, as it is equal to how many wins, loses, or draws
+            return resultTotal;     //output the counter, as it is equal to how many wins, loses, or draws
         }
 
         public void clearHistory()
@@ -178,7 +160,5 @@ namespace GameLibrary
             const string resultFile = "../../Results.txt";
             File.WriteAllText(resultFile, string.Empty);
         }
-
-       
     }
 }
