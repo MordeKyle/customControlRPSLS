@@ -71,17 +71,25 @@ namespace winFormRPSLS
 
             if (confirm == DialogResult.Yes)
             {
-                Environment.Exit(0);     // Showed an exception when "yes" was clicked
+                // Exits the program if "yes" button is clicked
+                this.Close();
             }
             else
             {
-
+                // Goes back to the application if "no" button is clicked
+                this.Refresh();
+               
             }
         }
 
         private void playGame(int userInput)
         {
             RPSLS play = new RPSLS();
+            // Get user choice
+            play.PlayerChoice = userInput;
+            MessageBox.Show("Player: " + play.PlayerChoice);
+            MessageBox.Show("Player: " + play.ComputerChoice);
+
             //int result; //delcare result holder
             int computerChoice; //declare computer choice holder
             //MessageBox.Show(userInput.ToString());
