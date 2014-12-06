@@ -82,17 +82,17 @@ namespace winFormRPSLS
         private void playGame(int userInput)
         {
             RPSLS play = new RPSLS();
-            int result; //delcare result holder
+            //int result; //delcare result holder
             int computerChoice; //declare computer choice holder
             //MessageBox.Show(userInput.ToString());
-            string resultOut; //declare string result holder for display
+            //string resultOut; //declare string result holder for display
             string computerChoiceOut; //declare string computerChoice holder for display
-            result = play.playGame(userInput); //play the game, return win lose or draw
+            //result = play.playGame(userInput); //play the game, return win lose or draw
             computerChoice = play.ComputerChoice; //return the computer's choice
-            resultOut = play.DisplayOutcome(result); //return real world value
+            //resultOut = play.DisplayOutcome(result); //return real world value
             computerChoiceOut = play.DisplayChoice(computerChoice); //return real world value
-            displayResults(computerChoiceOut, resultOut); //pass user choice, computer choice, and result of game to be displayed
-            play.recordResults(resultOut); //record result of game to result file
+            //displayResults(computerChoiceOut, resultOut); //pass user choice, computer choice, and result of game to be displayed
+            //play.recordResults(resultOut); //record result of game to result file
 
             winsLbl.Text  = play.readResults(win).ToString(); //print wins
             losesLbl.Text = play.readResults(lose).ToString(); //print loses

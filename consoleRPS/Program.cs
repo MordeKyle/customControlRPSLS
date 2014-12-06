@@ -12,10 +12,9 @@ namespace consoleRPS
   
         static void Main(string[] args)
         {
-            // Create a new RPS instance
+            // Create a new RPS instance to play Rock, Paper, Scissors Game
             RPSConsole play = new RPSConsole();
             play.ShowWelcomeMessage();
-            //ShowGameMenu();
 
             while (true)
             {
@@ -60,6 +59,7 @@ namespace consoleRPS
             Console.Clear();
             Console.WriteLine("Are you sure you want to " + type + "?");
             Console.Write("Please type Y or N and hit enter.");   // Added this to give the user what keys to hit, to confirm exit.
+            //int userInput = play.GetUserInput();
             int userInput = GetUserInput();
  
             while (!(Enum.IsDefined(typeof(RPSLS.Confirm), userInput)))
@@ -70,7 +70,7 @@ namespace consoleRPS
                 //userInput = inputHandeler();
             }
            
-            if (userInput == (int)RPSLS.Confirm.No)
+            if (userInput == (int)RPSConsole.Confirm.No)
             {
                 result = false;
             }
@@ -82,7 +82,7 @@ namespace consoleRPS
              
         }
 
-        //TODO: Move this to PlayerChoice's set property?
+
         public static int GetUserInput()  
         {
             Console.WriteLine();
@@ -114,6 +114,6 @@ namespace consoleRPS
                     break;
             }
             return playerChoice;
-        }     
+        }    
     }
 }
