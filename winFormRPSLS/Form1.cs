@@ -82,13 +82,14 @@ namespace winFormRPSLS
             }
         }
 
+
         private void playGame(int userInput)
         {
             RPSLS play = new RPSLS();
             // Get user choice
             play.PlayerChoice = userInput;
-            MessageBox.Show("Player: " + play.PlayerChoice);
-            MessageBox.Show("Player: " + play.ComputerChoice);
+            //MessageBox.Show("Player: " + play.PlayerChoice);
+            //MessageBox.Show("Player: " + play.ComputerChoice);
 
             //int result; //delcare result holder
             int computerChoice; //declare computer choice holder
@@ -107,8 +108,13 @@ namespace winFormRPSLS
             drawsLbl.Text = play.readResults(draw).ToString(); //print draws
 
             // Display user input
-            // TODO: Create a method to display user, computer choice, and results
+
+            
+            // Display player's choice, computer's choice, and the outcome to assigned labels.
             userChoiceLbl.Text = play.DisplayChoice(userInput);
+            computerChoiceLbl.Text = play.DisplayChoice(play.ComputerChoice);
+            resultLbl.Text = play.DisplayOutcome(play.DetermineOutcome());
+
         }
         private void displayResults(string computerChoice, string result)
         {
@@ -124,7 +130,7 @@ namespace winFormRPSLS
 
             if (confirm == DialogResult.Yes)
             {
-                RPSLS clear = new RPSLS();
+                RPSLS clear = new RPSLS();  ///??/
                 clear.clearHistory();
                 winsLbl.Text = "0"; //update labels
                 losesLbl.Text = "0";
@@ -132,7 +138,7 @@ namespace winFormRPSLS
             }
             else
             {
-
+                this.Refresh();
             }
         }
 
