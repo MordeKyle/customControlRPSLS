@@ -108,7 +108,6 @@ namespace winFormRPSLS
 
             //play.recordResults(resultOut); //record result of game to result file
             // Record results to text file
-            // There's a bug in counting the results. TODO:
             play.recordResults(play.DisplayOutcome(play.DetermineOutcome())); //record result of game to result file
 
             winsLbl.Text  = play.readResults(win).ToString();   //print wins
