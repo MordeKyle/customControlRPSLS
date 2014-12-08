@@ -107,6 +107,7 @@ namespace WPF_RPSLS
                 Int32 drawCount = (Int32)cmdDraw.ExecuteScalar();
                 tbDrawCount.Text = drawCount.ToString();
 
+
             }
             catch (Exception ex)
             {
@@ -117,6 +118,16 @@ namespace WPF_RPSLS
                 db.Close();
             }
   
+        }
+
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            //SqlCommand reset = new SqlCommand("DELETE from RPSLS", db);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
