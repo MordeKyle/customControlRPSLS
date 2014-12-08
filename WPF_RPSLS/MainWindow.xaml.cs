@@ -65,7 +65,6 @@ namespace WPF_RPSLS
             // Get and set player choice
             play.PlayerChoice = player;
 
-
             tbPlayerChoice.Text = play.DisplayChoice(play.PlayerChoice);
             tbComputerChoice.Text = play.DisplayChoice(play.ComputerChoice);
             tbResult.Text = play.DisplayOutcome(play.DetermineOutcome());
@@ -73,49 +72,40 @@ namespace WPF_RPSLS
             string pChoice = play.DisplayChoice(play.PlayerChoice);
             string cChoice = play.DisplayChoice(play.ComputerChoice);
             string gOutcome = play.DisplayOutcome(play.DetermineOutcome());
-
-            // Record results to text file
-            play.recordResults(play.DisplayOutcome(play.DetermineOutcome())); 
-
-            // Display stats
-            string win = "You Win!";
-            string lose = "You Lose!";
-            string draw = "It's a Draw!";
-            tbWinCount.Text = play.readResults(win).ToString();
-            tbLoseCount.Text = play.readResults(lose).ToString();
-            tbDrawCount.Text = play.readResults(draw).ToString();
-
-            string playerChoiceString = playerChoice.ToString();
             
             // Record result to database
-            // TODO: This is totally unsafe, connection must be saved in app.config file.
+            // TODO: This is totally unsafe, connection string must be saved in app.config file.
             SqlConnection db = new SqlConnection();
-            db.ConnectionString = "Data Source=198.###.###.###;" +
-                                    "Initial Catalog=########;" +
-                                    "User id=#########;" +
+            db.ConnectionString = "Data Source=###.###.###.###;" +
+                                    "Initial Catalog=#######;" +
+                                    "User id=########;" +
                                     "Password=#############;";
             db.Open();
 
             try
             {
+                // Insert data into the database
                 string sql = "INSERT INTO RPSLS(PlayerChoice, ComputerChoice, Outcome) VALUES(@player, @computer, @outcome)";
                 SqlCommand exec = new SqlCommand(sql, db);
-                //exec.Parameters.Add("@player", pChoice);
                 exec.Parameters.AddWithValue("@player", pChoice);
-                //exec.Parameters.Add("@computer", cChoice);
                 exec.Parameters.AddWithValue("@computer", cChoice);
-                //exec.Parameters.Add("@outcome", gOutcome);
                 exec.Parameters.AddWithValue("@outcome", gOutcome);
-                //db.Open();
                 exec.ExecuteNonQuery();
 
-                MessageBox.Show("Added Record", "Message", MessageBoxButton.OK);
+                //MessageBox.Show("Added Record", "Message", MessageBoxButton.OK);
 
-                // Retrieve data to MessageBox
-                SqlCommand cmd = new SqlCommand("Select Count(Outcome) from RPSLS where Outcome='You Win!'", db);
-                Int32 count = (Int32)cmd.ExecuteScalar();
-
-                MessageBox.Show(count.ToString());
+                // Retrieve win count from database
+                SqlCommand cmdWin = new SqlCommand("Select Count(Outcome) from RPSLS where Outcome='You Win!'", db);
+                Int32 winCount = (Int32)cmdWin.ExecuteScalar();
+                tbWinCount.Text = winCount.ToString();
+                // Retrieve lose count from database
+                SqlCommand cmdLose = new SqlCommand("Select Count(Outcome) from RPSLS where Outcome='You Lose!'", db);
+                Int32 loseCount = (Int32)cmdLose.ExecuteScalar();
+                tbLoseCount.Text = loseCount.ToString();
+                // Retrieve raw count from database
+                SqlCommand cmdDraw = new SqlCommand("Select Count(Outcome) from RPSLS where Outcome='It''s a Draw!'", db);
+                Int32 drawCount = (Int32)cmdDraw.ExecuteScalar();
+                tbDrawCount.Text = drawCount.ToString();
 
             }
             catch (Exception ex)
@@ -126,7 +116,7 @@ namespace WPF_RPSLS
             {
                 db.Close();
             }
-            
+  
         }
     }
 }
