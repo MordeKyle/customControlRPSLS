@@ -76,10 +76,10 @@ namespace WPF_RPSLS
             // Record result to database
             // TODO: This is totally unsafe, connection string must be saved in app.config file.
             SqlConnection db = new SqlConnection();
-            db.ConnectionString = "Data Source=###.###.###.###;" +
-                                    "Initial Catalog=#######;" +
-                                    "User id=########;" +
-                                    "Password=#############;";
+            db.ConnectionString = "Data Source=198.209.220.125;" +
+                                    "Initial Catalog=issjarcelo;" +
+                                    "User id=issjarcelo;" +
+                                    "Password=Password1;";
             db.Open();
 
             try
@@ -107,6 +107,8 @@ namespace WPF_RPSLS
                 Int32 drawCount = (Int32)cmdDraw.ExecuteScalar();
                 tbDrawCount.Text = drawCount.ToString();
 
+                
+
 
             }
             catch (Exception ex)
@@ -122,7 +124,8 @@ namespace WPF_RPSLS
 
         private void btnReset_Click(object sender, RoutedEventArgs e)
         {
-            //SqlCommand reset = new SqlCommand("DELETE from RPSLS", db);
+            //TODO: SqlCommand reset = new SqlCommand("DELETE from RPSLS", db);
+            //or make a routed event handler.
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

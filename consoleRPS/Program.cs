@@ -67,6 +67,7 @@ namespace consoleRPS
                 Console.Clear();
                 Console.WriteLine();
                 Console.Write("Invalid Input. Please type Y or N, and hit enter.");  // Prompt the user to enter valid input.
+                //TODO: Fix bug if player type anything other N
                 //userInput = inputHandeler();
             }
            

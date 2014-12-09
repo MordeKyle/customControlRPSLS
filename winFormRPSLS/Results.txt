@@ -44,3 +44,5 @@ You Win!
 You Lose!
 You Lose!
 You Win!
+It's a Draw!
+You Win!

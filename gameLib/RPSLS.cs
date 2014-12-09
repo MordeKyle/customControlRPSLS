@@ -13,7 +13,7 @@ namespace GameLibrary
         /// Enums declared in RPS cannot be inherited. The "new" keyword is used to hide inherited member and define a new enum.
         /// </summary>
         public new enum Choice {Rock = 0, Paper = 1, Scissors = 2, Lizard = 3, Spock = 4, Exit = 5} //enums for user inputs.
-        //public new enum Outcome {Win = 10, Lose = 11, Draw = 12} //enums for game outcomes.
+        //public enum Outcome {Win = 10, Lose = 11, Draw = 12} //enums for game outcomes.
         //public enum Confirm {Yes = 20, No = 21} //enums for confirmation messages.
 
         // create a constructor
@@ -24,7 +24,7 @@ namespace GameLibrary
         /// Implement the computer choice interface. The override keyword is used to change the number of
         /// random numbers from 3 to 5 to play RPSLS.
         /// </summary>
-        private int computerChoice;     // Backing field for computer choice
+        //private int computerChoice;     // Backing field for computer choice //use protected
         public override int ComputerChoice       // Set the property for computer choice
         {
             get 
@@ -65,33 +65,8 @@ namespace GameLibrary
         }
 
         /// <summary>
-        /// Takes result of game as game value and resturns real world value
+        /// Compares the user's and computer's input using 2D array
         /// </summary>
-        /// <param name="outcome">game value result of game</param>
-        /// <returns>real world value of result of game</returns>
-        /*public string DisplayOutcome(int outcome)
-        {
-            string result = "";
-            switch (outcome)
-            {
-                case (int)Outcome.Win:
-                    result = "You Win!";
-                    break;
-                case (int)Outcome.Lose:
-                    result = "You Lose!";
-                    break;
-                case (int)Outcome.Draw:
-                    result = "It's a Draw!";
-                    break;
-            }
-            return result;
-        }*/
-
-        /// <summary>
-        /// Compares the user's and computer's inputs.
-        /// </summary>
-        /// <param name="userInput">User's input</param>
-        /// <param name="computerInput">Computer's input</param>
         /// <returns>Returns the result of the game</returns>
         public override int DetermineOutcome()
         {
